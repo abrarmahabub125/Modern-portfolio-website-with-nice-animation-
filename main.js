@@ -2,80 +2,61 @@ const hamburger = document.querySelector(".hamburger");
 const ul = hamburger.nextElementSibling;
 const li = ul.childNodes;
 const buttonMood = document.querySelector(".button-mood");
-const body = document.querySelector("body"); 
+const body = document.querySelector("body");
 
 let mood = "light";
 
 buttonMood.addEventListener("click", () => {
-    if (mood === "light") {
-        mood = "dark";
-        body.classList.add("dark")
-        buttonMood.innerHTML = `
+  if (mood === "light") {
+    mood = "dark";
+    body.classList.add("dark");
+    buttonMood.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
             </svg>`;
-    } else {
-        mood = "light";
-        body.classList.remove("dark");
-        buttonMood.innerHTML = `
+  } else {
+    mood = "light";
+    body.classList.remove("dark");
+    buttonMood.innerHTML = `
             <svg class="animate-on-load" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
             </svg>`;
-    }
-})
+  }
+});
 
-hamburger.addEventListener("click", () =>{
-    if (hamburger.classList.contains("active")) {
-        hamburger.classList.remove("active")
-        hamburger.innerHTML = `
+hamburger.addEventListener("click", () => {
+  if (hamburger.classList.contains("active")) {
+    hamburger.classList.remove("active");
+    hamburger.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-                </svg>`
-    } else {
-        hamburger.classList.add("active")
-        hamburger.innerHTML = `
+                </svg>`;
+  } else {
+    hamburger.classList.add("active");
+    hamburger.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>`;
-    }
-})
+  }
+});
 
-li.forEach(item =>{
-    item.addEventListener("click", () =>{
-        hamburger.classList.remove("active");
-        hamburger.innerHTML = `
+li.forEach((item) => {
+  item.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    hamburger.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-            </svg>`
-    })
-})
-
-function revealOnScroll() {
-    const reveals = document.querySelectorAll(".reveal");
-    
-    reveals.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const revealTop = element.getBoundingClientRect().top;
-        const revealPoint = 0; // how early to show
-        
-        if (revealTop < windowHeight - revealPoint) {
-            element.classList.add("active");
-        } else {
-            element.classList.remove("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-
+            </svg>`;
+  });
+});
 
 window.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".animate-on-load");
-    
-    elements.forEach(el => {
-        // Delay দিলে animation টা better feel হয়
-        setTimeout(() => {
-            el.classList.add("show-on-load");
-        }, 150); // 150ms delay after DOM loaded
-    });
+  const elements = document.querySelectorAll(".animate-on-load");
+
+  elements.forEach((el) => {
+    // Delay দিলে animation টা better feel হয়
+    setTimeout(() => {
+      el.classList.add("show-on-load");
+    }, 150); // 150ms delay after DOM loaded
+  });
 });
