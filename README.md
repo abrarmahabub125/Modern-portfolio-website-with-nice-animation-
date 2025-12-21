@@ -39,6 +39,6 @@ If you'd like to collaborate or just say hi:
 
 * GitHub: [https://github.com/your-username](https://github.com/abrarmahabub125)
 * Email: [your-email@example.com](mailto:abrarmahabub404@gmail.com)
-* Live Preview :[ https://abrarmahabub125.github.io/Modern-Responsive-Portfolio/](https://abrarmahabub125.github.io/mini-portfolio-website/)
+* Live Preview :[ https://abrarmahabub125.github.io/mini-portfolio-website/](https://abrarmahabub125.github.io/mini-portfolio-website/)
 
 💡 Thanks for checking out my work! Feel free to star ⭐ any repo you like — it keeps me motivated.
